@@ -1,0 +1,9 @@
+<h1>看板</h1>
+
+<%= link_to "新增看版", new_board_path %>
+
+<ul>
+  <% @boards.each do |board| %>
+    <li><%= board.title %></li>
+  <% end %>
+</ul>
