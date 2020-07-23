@@ -1,24 +1,14 @@
-# README
+# PPT 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+試著復刻 PTT 功能
 
-Things you may want to cover:
+### 功能
 
-* Ruby version
+1. Announce 公佈欄
+2. Favorite 我的最愛
+3. Category 分類看板
+4. Mail     私人信件區
+5. Talk     聊天功能（即時水球功能）
+6. User     個人設定
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+by eddie@5xruby.tw
