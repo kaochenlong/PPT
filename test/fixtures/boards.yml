@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  intro: MyText
+  deleted_at: 2020-07-23 14:09:02
+  state: MyString
+
+two:
+  title: MyString
+  intro: MyText
+  deleted_at: 2020-07-23 14:09:02
+  state: MyString
