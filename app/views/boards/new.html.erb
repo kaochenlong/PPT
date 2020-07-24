@@ -1,14 +1,11 @@
 <h1>新增看板</h1>
 
-<form action="/boards" method="post">
+<%= form_for(@board) do |f| %>
+  <%= f.label :title, "看板名稱" %>
+  <%= f.text_field :title %>
 
-  <input type="text" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= f.label :intro, "看板說明" %>
+  <%= f.text_area :intro %>
 
-  <label for="title">看板名稱</label>
-  <input type="text" id="title" name="title"><br />
-
-  <label for="intro">說明</label>
-  <textarea id="intro" name="intro"></textarea>
-
-  <input type="submit" value="送出">
-</form>
+  <%= f.submit "送出" %>
+<% end %>
