@@ -35,6 +35,12 @@ class BoardsController < ApplicationController
     end
   end
 
+  def destroy
+    @board = Board.find(params[:id])
+    @board.destroy
+    redirect_to boards_path, notice: "刪除成功"
+  end
+
   private
   # Strong Parameters
   def board_params

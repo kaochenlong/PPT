@@ -7,6 +7,8 @@
     <li>
       <%= link_to board.title, board_path(board) %>
       <%= link_to "編輯", edit_board_path(board) %>
+      <%= link_to "刪除", board_path(board), method: 'delete',
+                          data: { confirm: '確認刪除?' } %>
     </li>
   <% end %>
 </ul>
