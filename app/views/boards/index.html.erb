@@ -4,6 +4,9 @@
 
 <ul>
   <% @boards.each do |board| %>
-    <li><%= link_to board.title, board_path(board) %></li>
+    <li>
+      <%= link_to board.title, board_path(board) %>
+      <%= link_to "編輯", edit_board_path(board) %>
+    </li>
   <% end %>
 </ul>

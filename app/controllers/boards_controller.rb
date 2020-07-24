@@ -17,8 +17,21 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to boards_path, notice: "新增成功"
     else
-      # redirect_to new_board_path, notice: "發生錯誤"
       render :new
+    end
+  end
+
+  def edit
+    @board = Board.find(params[:id])
+  end
+
+  def update
+    @board = Board.find(params[:id])
+
+    if @board.update(board_params)
+      redirect_to boards_path, notice: "更新成功"
+    else
+      render :edit
     end
   end
 
