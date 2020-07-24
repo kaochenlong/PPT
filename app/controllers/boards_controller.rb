@@ -13,7 +13,8 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to boards_path, notice: "新增成功"
     else
-      # NG
+      # redirect_to new_board_path, notice: "發生錯誤"
+      render :new
     end
   end
 

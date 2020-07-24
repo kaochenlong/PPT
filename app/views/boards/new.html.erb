@@ -1,11 +1,15 @@
 <h1>新增看板</h1>
 
 <%= form_for(@board) do |f| %>
-  <%= f.label :title, "看板名稱" %>
-  <%= f.text_field :title %>
+  <div class="fields">
+    <%= f.label :title, "看板名稱" %>
+    <%= f.text_field :title %>
+  </div>
 
-  <%= f.label :intro, "看板說明" %>
-  <%= f.text_area :intro %>
+  <div class="fields">
+    <%= f.label :intro, "看板說明" %>
+    <%= f.text_area :intro %>
+  </div>
 
   <%= f.submit "送出" %>
 <% end %>
