@@ -1,5 +1,13 @@
 <h1>新增看板</h1>
 
+<% if @board.errors.any? %>
+  <ul>
+  <% @board.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_for(@board) do |f| %>
   <div class="fields">
     <%= f.label :title, "看板名稱" %>
