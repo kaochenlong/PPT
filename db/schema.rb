@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_060902) do
+ActiveRecord::Schema.define(version: 2020_07_30_041452) do
 
   create_table "boards", force: :cascade do |t|
     t.string "title"
@@ -22,4 +22,19 @@ ActiveRecord::Schema.define(version: 2020_07_23_060902) do
     t.index ["deleted_at"], name: "index_boards_on_deleted_at"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "board_id", null: false
+    t.datetime "deleted_at"
+    t.string "ip_address"
+    t.string "serial"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_posts_on_board_id"
+    t.index ["deleted_at"], name: "index_posts_on_deleted_at"
+    t.index ["serial"], name: "index_posts_on_serial", unique: true
+  end
+
+  add_foreign_key "posts", "boards"
 end

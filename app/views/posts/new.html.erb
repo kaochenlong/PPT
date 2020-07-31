@@ -1,6 +1,6 @@
 <h1>新增文章</h1>
 
-<%= form_with(model: @post, url: board_posts_path) do |form| %>
+<%= form_with(model: @post, url: board_posts_path, local: true) do |form| %>
 
   <div class="fields">
     <%= form.label :title, "標題" %>

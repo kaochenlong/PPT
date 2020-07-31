@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @board, notice: '文章新增成功'
     else
-      # render :new
+      render :new
     end
   end
 
