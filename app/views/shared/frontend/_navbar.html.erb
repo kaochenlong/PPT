@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <% if session[:user_token] %>
+      <li><%= @current_user.account %></li>
+      <li>登出</li>
+    <% else %>
+      <li>登入</li>
+      <li>註冊</li>
+    <% end %>
+  </ul>
+</nav>

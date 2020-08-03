@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <%= notice %>
+    <%= render "shared/frontend/navbar" %>
+    <%= render "shared/common/flash" %>
     <%= yield %>
+    <%= render "shared/frontend/footer" %>
   </body>
 </html>

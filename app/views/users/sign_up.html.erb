@@ -1,1 +1,20 @@
 <h1>會員註冊</h1>
+
+<%= form_for(@user) do |form| %>
+  <div class="fields">
+    <%= form.label :account, "帳號" %>
+    <%= form.text_field :account %>
+  </div>
+
+  <div class="fields">
+    <%= form.label :password, "密碼" %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="fields">
+    <%= form.label :email, "信箱" %>
+    <%= form.email_field :email %>
+  </div>
+
+  <%= form.submit "註冊帳號" %>
+<% end %>

@@ -4,7 +4,6 @@ class User < ApplicationRecord
 
   before_create :encrypt_password
 
-  # User.login(account: "nil", password: "nil")
   def self.login(options)
     if options[:account] && options[:password]
       find_by(account: options[:account],
