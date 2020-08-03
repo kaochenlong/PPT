@@ -1,1 +1,15 @@
 <h1>會員登入</h1>
+
+<%= form_for(@user, url: login_users_path) do |form| %>
+  <div class="fields">
+    <%= form.label :account %>
+    <%= form.text_field :account, placeholder: '請輸入帳號或 email' %>
+  </div>
+
+  <div class="fields">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <%= form.submit "登入" %>
+<% end %>

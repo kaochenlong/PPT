@@ -4,8 +4,8 @@
       <li><%= current_user.account %></li>
       <li><%= link_to "登出", sign_out_users_path, method: 'delete' %></li>
     <% else %>
-      <li>登入</li>
-      <li>註冊</li>
+      <li><%= link_to "登入", sign_in_users_path %></li>
+      <li><%= link_to "註冊", sign_up_users_path %></li>
     <% end %>
   </ul>
 </nav>
