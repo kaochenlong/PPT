@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
-
   before_action :find_board, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @boards = Board.all
@@ -10,11 +10,7 @@ class BoardsController < ApplicationController
   end
 
   def new
-    if user_signed_in?
-      @board = Board.new
-    else
-      redirect_to root_path, notice: '請先登入會員'
-    end
+    @board = Board.new
   end
 
   def create

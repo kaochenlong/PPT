@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_074228) do
+ActiveRecord::Schema.define(version: 2020_08_03_085815) do
+
+  create_table "board_masters", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "board_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_board_masters_on_board_id"
+    t.index ["user_id"], name: "index_board_masters_on_user_id"
+  end
 
   create_table "boards", force: :cascade do |t|
     t.string "title"
@@ -51,5 +60,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_074228) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "board_masters", "boards"
+  add_foreign_key "board_masters", "users"
   add_foreign_key "posts", "boards"
 end
