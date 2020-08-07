@@ -7,6 +7,14 @@ class Post < ApplicationRecord
 
   before_create :create_serial
 
+  def display_username
+    if user.nil?
+      "-"
+    else
+      user.account
+    end
+  end
+
   private
   def create_serial
     self.serial = serial_generator(10)

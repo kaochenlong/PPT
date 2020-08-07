@@ -8,6 +8,7 @@
 <ul>
 <% @posts.each do |post| %>
   <li>
+    <%= post.display_username %>
     <%= post.title %>
     <%= link_to "編輯", edit_post_path(post) %>
   </li>

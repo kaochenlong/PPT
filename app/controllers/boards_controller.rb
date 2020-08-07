@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @posts = @board.posts
+    @posts = @board.posts.includes(:user)
   end
 
   def new
