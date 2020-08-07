@@ -1,4 +1,8 @@
-<h1>看板 <%= @board.title %></h1>
+<h1>
+  看板 <%= @board.title %>
+  | <%= link_to "我的最愛", favorite_board_path(@board), method: 'post' %>
+</h1>
+
 <div>
   [版主：<%= display_bm(@board) %>]
 </div>

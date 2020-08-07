@@ -1,0 +1,2 @@
+yoyo: bin/rails s -p 3000
+jojo: bin/webpack-dev-server

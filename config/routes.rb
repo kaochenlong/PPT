@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   root "pages#index"
   get "/about", to: "pages#about"
 
+  resources :favorites, only: [:index]
+
   resources :boards do
+    member do
+      post :favorite
+    end
+
     resources :posts, shallow: true
   end
 
