@@ -4,3 +4,12 @@
 </div>
 
 <%= link_to "新增文章", new_board_post_path(@board) %>
+
+<ul>
+<% @posts.each do |post| %>
+  <li>
+    <%= post.title %>
+    <%= link_to "編輯", edit_post_path(post) %>
+  </li>
+<% end %>
+</ul>

@@ -7,6 +7,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @posts = @board.posts
   end
 
   def new

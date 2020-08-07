@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   validates :serial, uniqueness: true
 
   belongs_to :board
+  belongs_to :user
 
   before_create :create_serial
 
