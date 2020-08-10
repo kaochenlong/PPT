@@ -8,3 +8,4 @@ const imagePath = (name) => images(name, true)
 
 require("scripts");
 require("stylesheets");
+import "controllers"

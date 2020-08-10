@@ -1,6 +1,12 @@
-<h1>
+<h1 data-controller="heart" data-heart-board="<%= @board.id %>">
   看板 <%= @board.title %>
-  | <%= link_to "我的最愛", favorite_board_path(@board), method: 'post' %>
+  <button data-action="click->heart#favorite">
+    <% if @board.favorited_by?(current_user) %>
+      <i class="fas fa-heart" data-target="heart.heart"></i>
+    <% else %>
+      <i class="far fa-heart" data-target="heart.heart"></i>
+    <% end %>
+  </button>
 </h1>
 
 <div>
