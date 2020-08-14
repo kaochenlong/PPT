@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   root "pages#index"
   get "/about", to: "pages#about"
 
+  namespace :api do
+    namespace :v2 do
+      resources :boards, only: [:index]
+    end
+  end
+
   resources :favorites, only: [:index]
 
   resources :boards do
