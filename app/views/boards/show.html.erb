@@ -17,9 +17,9 @@
 
 <ul>
 <% @posts.each do |post| %>
-  <li>
+  <li data-controller="post" data-action="cat@window->post#something">
     <%= post.display_username %>
-    <%= link_to post.title, post %>
+    <%= link_to post.title, post, data: { target: 'post.title' } %>
     <%= link_to "編輯", edit_post_path(post) %>
   </li>
 <% end %>
