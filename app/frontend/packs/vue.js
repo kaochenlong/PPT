@@ -1,6 +1,6 @@
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
-import Red from '../app.vue'
+import App from 'vue/components/app.vue'
 
 Vue.use(TurbolinksAdapter)
 
@@ -10,7 +10,7 @@ document.addEventListener('turbolinks:load', () => {
   if (el) {
     new Vue({
       el,
-      components: { Red }
+      components: { App }
     })
   }
 })
