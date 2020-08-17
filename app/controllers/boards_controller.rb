@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @boards = Board.normal
+    @boards = Board.normal.page(params[:page])
   end
 
   def show

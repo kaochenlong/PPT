@@ -1,5 +1,6 @@
 class Board < ApplicationRecord
   acts_as_paranoid
+  paginates_per 6
 
   has_many :posts
 
