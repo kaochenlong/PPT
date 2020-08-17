@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "pages#index"
   get "/about", to: "pages#about"
+  get "/pricing", to: "pages#pricing"
 
   namespace :api do
     namespace :v2 do

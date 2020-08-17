@@ -21,10 +21,13 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    authorize @board, :new?
   end
 
   def create
     @board = Board.new(board_params)
+    @board.users << current_user
+    authorize @board, :create?
 
     if @board.save
       redirect_to boards_path, notice: "新增成功"

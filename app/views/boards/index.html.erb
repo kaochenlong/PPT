@@ -1,6 +1,6 @@
 <h1>看板</h1>
 
-<%= link_to "新增看版", new_board_path %>
+<%= link_to "新增看版", new_board_path if policy(:board).create? %>
 
 <ul>
   <% @boards.each do |board| %>
