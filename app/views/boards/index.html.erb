@@ -1,9 +1,5 @@
 <h1>看板</h1>
 
-<div id="board">
-  <Board></Board>
-</div>
-
 <%= link_to "新增看版", new_board_path %>
 
 <ul>
@@ -13,6 +9,7 @@
       <%= link_to "編輯", edit_board_path(board) %>
       <%= link_to "刪除", board_path(board), method: 'delete',
                           data: { confirm: '確認刪除?' } %>
+      <%= link_to "隱版", hide_board_path(board), method: 'put' %>
     </li>
   <% end %>
 </ul>

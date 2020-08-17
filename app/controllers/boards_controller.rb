@@ -1,9 +1,9 @@
 class BoardsController < ApplicationController
-  before_action :find_board, only: [:favorite, :show, :edit, :update, :destroy]
+  before_action :find_board, only: [:favorite, :show, :edit, :update, :destroy, :hide]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @boards = Board.all
+    @boards = Board.normal
   end
 
   def show
@@ -49,9 +49,14 @@ class BoardsController < ApplicationController
     redirect_to boards_path, notice: "刪除成功"
   end
 
+  def hide
+    @board.hide! if @board.may_hide?
+    redirect_to boards_path, notice: '看版己隱藏'
+  end
+
   private
   def find_board
-    @board = Board.find(params[:id])
+    @board = Board.normal.find(params[:id])
   end
 
   # Strong Parameters

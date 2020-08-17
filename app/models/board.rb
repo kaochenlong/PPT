@@ -14,4 +14,27 @@ class Board < ApplicationRecord
   def favorited_by?(u)
     favorited_users.include?(u)
   end
+
+  include AASM
+
+  aasm(column: 'state') do
+    state :normal, initial: true
+    state :hidden, :locked
+
+    event :hide do
+      transitions from: [:normal, :locked], to: :hidden
+    end
+
+    event :show do
+      transitions from: :hidden, to: :locked
+    end
+
+    event :lock do
+      transitions from: [:normal, :hidden], to: :locked
+    end
+
+    event :unlock do
+      transitions from: :locked, to: :normal
+    end
+  end
 end
