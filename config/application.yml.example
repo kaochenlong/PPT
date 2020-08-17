@@ -1,0 +1,9 @@
+braintree_merchant_id: "your id"
+braintree_public_key: "your key"
+braintree_private_key: "your key"
+plan_a_price: 5
+plan_b_price: 20
+
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
