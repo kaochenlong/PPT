@@ -34,4 +34,6 @@ Rails.application.routes.draw do
       delete :sign_out
     end
   end
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

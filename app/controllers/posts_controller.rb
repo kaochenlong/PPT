@@ -16,6 +16,8 @@ class PostsController < ApplicationController
     @post = @board.posts.new(post_params)
 
     if @post.save
+      # 寄信
+      # SendmailJob.set(wait: 10.seconds).perform_later(@post)
       redirect_to @board, notice: '文章新增成功'
     else
       render :new
@@ -40,7 +42,7 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post)
-          .permit(:title, :content)
+          .permit(:title, :content, :photo, :hello)
           .merge(user: current_user)
   end
 

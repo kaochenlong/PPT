@@ -12,5 +12,15 @@
     <%= form.text_area :content %>
   </div>
 
+  <div class="fields">
+    <%= form.label :hello, "內文" %>
+    <%= form.rich_text_area :hello %>
+  </div>
+
+  <div class="fields">
+    <%= form.label :photo, "附件" %>
+    <%= form.file_field :photo %>
+  </div>
+
   <%= form.submit %>
 <% end %>
